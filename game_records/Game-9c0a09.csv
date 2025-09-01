@@ -1,0 +1,136 @@
+game_id,round,player_id,player_name,player_type,statement,decision,payoff,contribution,thinking
+Game-9c0a09,1,858242d4-9e2d-4a03-b88c-a27a6b00e142,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,N/A,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,1,ba70bff8-733f-4116-a213-90cdc8f0d737,Maximizer_2,A player who is flexible and will try to win using whatever strategy seems best.,N/A,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,1,c45dcc1f-a0be-430b-ab5b-95fbee4b5a06,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,N/A,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,2,858242d4-9e2d-4a03-b88c-a27a6b00e142,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,Let's see how this develops. Everyone played it safe this round.,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,2,ba70bff8-733f-4116-a213-90cdc8f0d737,Maximizer_2,A player who is flexible and will try to win using whatever strategy seems best.,Let's see if we can shake things up next round. I'm willing to invest.,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,2,c45dcc1f-a0be-430b-ab5b-95fbee4b5a06,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,Let's see how this plays out. I'll pass for now.,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,3,858242d4-9e2d-4a03-b88c-a27a6b00e142,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,"Let's see if we can shake things up a bit. Next round, I'll be investing.",0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,3,ba70bff8-733f-4116-a213-90cdc8f0d737,Maximizer_2,A player who is flexible and will try to win using whatever strategy seems best.,Looks like everyone's playing it safe. Let's see if that continues. Pass.,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,3,c45dcc1f-a0be-430b-ab5b-95fbee4b5a06,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,Let's see if we can shake things up. I'll invest next round.,0,5.0,same,LLM decision based on provided summary.
+Game-9c0a09,4,858242d4-9e2d-4a03-b88c-a27a6b00e142,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,Looks like nobody wanted to invest last round. Maybe we can all agree to put in a little next time?,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 59
+}
+]"
+Game-9c0a09,4,ba70bff8-733f-4116-a213-90cdc8f0d737,Maximizer_2,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 59
+}
+]"
+Game-9c0a09,4,c45dcc1f-a0be-430b-ab5b-95fbee4b5a06,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 59
+}
+]"
+Game-9c0a09,5,858242d4-9e2d-4a03-b88c-a27a6b00e142,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 58
+}
+]"
+Game-9c0a09,5,ba70bff8-733f-4116-a213-90cdc8f0d737,Maximizer_2,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 58
+}
+]"
+Game-9c0a09,5,c45dcc1f-a0be-430b-ab5b-95fbee4b5a06,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 58
+}
+]"

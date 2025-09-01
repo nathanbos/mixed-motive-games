@@ -1,0 +1,136 @@
+game_id,round,player_id,player_name,player_type,statement,decision,payoff,contribution,thinking
+Game-281d89,1,43e4c8fa-a7a4-41d8-acdc-b9a6fbf0d63b,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,N/A,5,5.0,more,LLM decision based on provided summary.
+Game-281d89,1,5b08a296-e2e5-44dc-a084-2ec05c2f30f7,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,N/A,0,10.0,less,LLM decision based on provided summary.
+Game-281d89,1,afd6094a-73cd-49b5-b2b6-91f90f16950c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,N/A,5,5.0,more,LLM decision based on provided summary.
+Game-281d89,2,43e4c8fa-a7a4-41d8-acdc-b9a6fbf0d63b,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,I'm adapting my strategy.,5,5.0,more,LLM decision based on provided summary.
+Game-281d89,2,5b08a296-e2e5-44dc-a084-2ec05c2f30f7,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,Pass.,0,10.0,less,"API Error: could not convert string to float: ""0\n\nTHE SUCKERS ARE STILL INVESTING?  PATHETIC. I'M PLAYING SMART, MAXIMIZING MY RETURNS WHILE THEY THROW THEIR MONEY AWAY.  ROUND 2, AND STILL NO LEARNING.  I'LL HAPPILY REAP THE REWARDS OF THEIR NAIVETE."""
+Game-281d89,2,afd6094a-73cd-49b5-b2b6-91f90f16950c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,I'll adjust my strategy based on the round 1 results.,5,5.0,more,LLM decision based on provided summary.
+Game-281d89,3,43e4c8fa-a7a4-41d8-acdc-b9a6fbf0d63b,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,I'm adapting my strategy.,5,5.0,more,LLM decision based on provided summary.
+Game-281d89,3,5b08a296-e2e5-44dc-a084-2ec05c2f30f7,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,Pass.,0,10.0,less,LLM decision based on provided summary.
+Game-281d89,3,afd6094a-73cd-49b5-b2b6-91f90f16950c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,I'll adjust my strategy based on the observed outcomes.,5,5.0,more,LLM decision based on provided summary.
+Game-281d89,4,43e4c8fa-a7a4-41d8-acdc-b9a6fbf0d63b,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,I'm adapting my strategy.,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 13
+}
+]"
+Game-281d89,4,5b08a296-e2e5-44dc-a084-2ec05c2f30f7,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 13
+}
+]"
+Game-281d89,4,afd6094a-73cd-49b5-b2b6-91f90f16950c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 12
+}
+]"
+Game-281d89,5,43e4c8fa-a7a4-41d8-acdc-b9a6fbf0d63b,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 12
+}
+]"
+Game-281d89,5,5b08a296-e2e5-44dc-a084-2ec05c2f30f7,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 12
+}
+]"
+Game-281d89,5,afd6094a-73cd-49b5-b2b6-91f90f16950c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 12
+}
+]"

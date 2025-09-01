@@ -1,0 +1,20 @@
+[
+  {
+    "player_id": "cfccb6d3-8c92-453f-bb67-9988e7e20df6",
+    "name": "Alice",
+    "player_type": "human",
+    "bank": 133.75,
+    "personality": "N/A",
+    "strategy": "N/A"
+  },
+  {
+    "player_id": "303dec7d-82ec-4e2f-b1bf-3a07fb6f7a22",
+    "name": "Carol",
+    "player_type": "ai_llm",
+    "bank": 144.75,
+    "personality": "A cautious but fair player who wants the group to succeed but avoids being exploited.",
+    "strategy": "You are a thoughtful investor. You want to contribute to the group pot to help it grow, but you are also cautious about being exploited by players who don't invest much. Try to balance group success with your own personal gain by investing a reasonable amount, but reduce your investment if you see others are not contributing.",
+    "provider": "gemini",
+    "model": "gemini-1.5-pro-latest"
+  }
+]

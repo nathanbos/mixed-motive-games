@@ -1,0 +1,136 @@
+game_id,round,player_id,player_name,player_type,statement,decision,payoff,contribution,thinking
+Game-df0f7c,1,facbc001-1812-451f-a6b1-768a3a6d0e4a,ThoughtfulInvestor_1,A cautious but fair player who wants the group to succeed but avoids being exploited.,N/A,0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,1,245f41c9-0e47-475b-8a4d-0199306a8d6f,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,N/A,0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,1,99bc1870-0559-46a4-b6d0-317601372b63,ThoughtfulInvestor_3,A cautious but fair player who wants the group to succeed but avoids being exploited.,N/A,0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,2,facbc001-1812-451f-a6b1-768a3a6d0e4a,ThoughtfulInvestor_1,A cautious but fair player who wants the group to succeed but avoids being exploited.,"Let's all consider making small, equal investments next round to see if we can collectively increase our returns.",0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,2,245f41c9-0e47-475b-8a4d-0199306a8d6f,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,"It seems we all played it safe this round. Let's aim to contribute a small, equal amount next round to see if we can boost our collective payoff. I'm willing to put in a little, but I'd like to see everyone else do the same.",0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,2,99bc1870-0559-46a4-b6d0-317601372b63,ThoughtfulInvestor_3,A cautious but fair player who wants the group to succeed but avoids being exploited.,"It seems we all played it safe this round. For the next round, I'm willing to invest a small amount, say 1, if at least one other player commits to doing the same.",0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,3,facbc001-1812-451f-a6b1-768a3a6d0e4a,ThoughtfulInvestor_1,A cautious but fair player who wants the group to succeed but avoids being exploited.,We all profited from the base contribution. Let's aim for a strategy that builds on that foundation without anyone taking unfair advantage.,0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,3,245f41c9-0e47-475b-8a4d-0199306a8d6f,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,"We all seem hesitant. Let's aim for small, consistent investments to build trust and see if we can collectively increase the payoff in the long run.",0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,3,99bc1870-0559-46a4-b6d0-317601372b63,ThoughtfulInvestor_3,A cautious but fair player who wants the group to succeed but avoids being exploited.,Let's try to increase our returns next round. I'm willing to invest a small amount if others are too.,0,5.0,same,LLM decision based on provided summary.
+Game-df0f7c,4,facbc001-1812-451f-a6b1-768a3a6d0e4a,ThoughtfulInvestor_1,A cautious but fair player who wants the group to succeed but avoids being exploited.,Perhaps we can discuss how to improve our overall earnings in the next round. Let's aim for a collaborative strategy that benefits everyone fairly.,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 46
+}
+]"
+Game-df0f7c,4,245f41c9-0e47-475b-8a4d-0199306a8d6f,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 46
+}
+]"
+Game-df0f7c,4,99bc1870-0559-46a4-b6d0-317601372b63,ThoughtfulInvestor_3,A cautious but fair player who wants the group to succeed but avoids being exploited.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 45
+}
+]"
+Game-df0f7c,5,facbc001-1812-451f-a6b1-768a3a6d0e4a,ThoughtfulInvestor_1,A cautious but fair player who wants the group to succeed but avoids being exploited.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 44
+}
+]"
+Game-df0f7c,5,245f41c9-0e47-475b-8a4d-0199306a8d6f,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 44
+}
+]"
+Game-df0f7c,5,99bc1870-0559-46a4-b6d0-317601372b63,ThoughtfulInvestor_3,A cautious but fair player who wants the group to succeed but avoids being exploited.,...,0,5.0,same,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-2.0-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 44
+}
+]"

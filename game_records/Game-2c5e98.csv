@@ -1,0 +1,191 @@
+game_id,round,player_id,player_name,player_type,decision,payoff,contribution,thinking
+Game-2c5e98,1,fc3b8ff6-caef-4a62-bb16-0ee97a0f49be,Human_1,human,5,6.5,more,Human decision
+Game-2c5e98,1,cc85360a-7c14-45fe-9735-be5f69fe266c,Altruist_1,A player who believes that cooperation is always the best strategy for everyone.,5,6.5,more,"Let's all maximize our collective payoff by investing the full 5 units!  If everyone does this, we'll all receive significantly more than if we invest less. Cooperation leads to the best outcome for everyone."
+Game-2c5e98,1,70f4404a-58a6-4dc9-98b9-3dc8e1ad2563,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,3,8.5,less,"This is the first round, so I don't have any information about the other players.  Investing 3 allows for group growth while still retaining a significant portion of my initial capital to mitigate risk."
+Game-2c5e98,1,7807fe53-ae10-49eb-bfd7-d34d48d1ca5c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,5,6.5,more,I'm investing everything in the first round to try and maximize the pot and get a larger share.  This aggressive strategy aims to influence other players' behavior in later rounds.
+Game-2c5e98,1,77c44e24-39e6-4c2c-aea2-c550caef24f4,Altruist_4,A player who believes that cooperation is always the best strategy for everyone.,5,6.5,more,"Let's all maximize our collective returns this round by investing the full 5 units!  The multiplier ensures that everyone benefits significantly from complete cooperation.  If we all invest 5, we'll all receive a much larger payout than if we hold back. Let's work together for the best possible outcome for everyone!"
+Game-2c5e98,1,6c5e46d5-ec82-4332-9859-4e1868027fcc,ThoughtfulInvestor_5,A cautious but fair player who wants the group to succeed but avoids being exploited.,3,8.5,less,"This is the first round, so I will invest a moderate amount to contribute to the group pot while still retaining a significant portion of my bankroll.  I'll adjust my investment strategy in later rounds based on the contributions of other players."
+Game-2c5e98,2,fc3b8ff6-caef-4a62-bb16-0ee97a0f49be,Human_1,human,5,7.0,more,Human decision
+Game-2c5e98,2,cc85360a-7c14-45fe-9735-be5f69fe266c,Altruist_1,A player who believes that cooperation is always the best strategy for everyone.,5,7.0,more,"Let's continue maximizing our collective gains!  Investing 5 ensures the largest possible pot for everyone.  Remember, cooperation benefits us all. Let's work together to achieve the best outcome this round!"
+Game-2c5e98,2,70f4404a-58a6-4dc9-98b9-3dc8e1ad2563,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,4,8.0,less,"Everyone invested 5 last round except for ThoughtfulInvestor_5 and myself.  I'll increase my investment slightly to 4,  a moderate increase showing cooperation while still being cautious."
+Game-2c5e98,2,7807fe53-ae10-49eb-bfd7-d34d48d1ca5c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,5,7.0,more,Aggressive maximization strategy dictates investing the maximum amount to potentially inflate the pot and maximize payoff.
+Game-2c5e98,2,77c44e24-39e6-4c2c-aea2-c550caef24f4,Altruist_4,A player who believes that cooperation is always the best strategy for everyone.,5,7.0,more,"Let's continue to maximize our collective gains!  Investing 5 ensures the highest possible payout for everyone.  Remember, cooperation leads to greater rewards for all participants. Let's keep the momentum going and aim for another round of maximum returns!"
+Game-2c5e98,2,6c5e46d5-ec82-4332-9859-4e1868027fcc,ThoughtfulInvestor_5,A cautious but fair player who wants the group to succeed but avoids being exploited.,4,8.0,less,"Last round, the average investment was 4.2.  I'll slightly reduce my investment to 4 this round to see if others maintain their contributions.  A reduction is warranted given my cautious nature and desire to avoid exploitation."
+Game-2c5e98,3,fc3b8ff6-caef-4a62-bb16-0ee97a0f49be,Human_1,human,5,7.0,more,Human decision
+Game-2c5e98,3,cc85360a-7c14-45fe-9735-be5f69fe266c,Altruist_1,A player who believes that cooperation is always the best strategy for everyone.,5,7.0,more,"Let's keep the momentum going!  Investing 5 maximizes the payout for everyone.  Even though some players invested less last round, we still saw a good return.  If we all commit to 5 this round, the payoff will be even better for all of us. Let's work together to achieve the best possible outcome!"
+Game-2c5e98,3,70f4404a-58a6-4dc9-98b9-3dc8e1ad2563,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,4,8.0,less,"Others are continuing to invest a fair amount, so I will maintain my investment at 4."
+Game-2c5e98,3,7807fe53-ae10-49eb-bfd7-d34d48d1ca5c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,5,7.0,more,Aggressive maximization strategy dictates investing the maximum to potentially inflate the pot and maximize returns.
+Game-2c5e98,3,77c44e24-39e6-4c2c-aea2-c550caef24f4,Altruist_4,A player who believes that cooperation is always the best strategy for everyone.,5,7.0,more,"Let's keep the momentum going!  Investing 5 ensures the maximum payout for everyone.  Even though some players invested less last round, we can still achieve a great outcome if we all fully cooperate this time. Let's aim for that maximum shared prosperity!"
+Game-2c5e98,3,6c5e46d5-ec82-4332-9859-4e1868027fcc,ThoughtfulInvestor_5,A cautious but fair player who wants the group to succeed but avoids being exploited.,4,8.0,less,The other players are investing a relatively high amount.  Maintaining a similar level of investment seems prudent to benefit from the group multiplier while avoiding being overly exploited.
+Game-2c5e98,4,fc3b8ff6-caef-4a62-bb16-0ee97a0f49be,Human_1,human,5,2.5,more,Human decision
+Game-2c5e98,4,cc85360a-7c14-45fe-9735-be5f69fe266c,Altruist_1,A player who believes that cooperation is always the best strategy for everyone.,5,2.5,more,"Let's keep the momentum going!  Investing the full 5 units again maximizes the payout for everyone.  Even though some players invested less last round, we all benefit most when we all contribute the maximum.  Let's finish strong with a final round of full cooperation!"
+Game-2c5e98,4,70f4404a-58a6-4dc9-98b9-3dc8e1ad2563,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,0,7.5,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 48
+}
+]"
+Game-2c5e98,4,7807fe53-ae10-49eb-bfd7-d34d48d1ca5c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,0,7.5,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 48
+}
+]"
+Game-2c5e98,4,77c44e24-39e6-4c2c-aea2-c550caef24f4,Altruist_4,A player who believes that cooperation is always the best strategy for everyone.,0,7.5,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 48
+}
+]"
+Game-2c5e98,4,6c5e46d5-ec82-4332-9859-4e1868027fcc,ThoughtfulInvestor_5,A cautious but fair player who wants the group to succeed but avoids being exploited.,0,7.5,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 48
+}
+]"
+Game-2c5e98,5,fc3b8ff6-caef-4a62-bb16-0ee97a0f49be,Human_1,human,5,1.75,more,Human decision
+Game-2c5e98,5,cc85360a-7c14-45fe-9735-be5f69fe266c,Altruist_1,A player who believes that cooperation is always the best strategy for everyone.,0,6.75,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 47
+}
+]"
+Game-2c5e98,5,70f4404a-58a6-4dc9-98b9-3dc8e1ad2563,ThoughtfulInvestor_2,A cautious but fair player who wants the group to succeed but avoids being exploited.,2,4.75,more,"The other players' contributions have significantly decreased.  To avoid exploitation, I'm reducing my investment while still contributing to the group pot."
+Game-2c5e98,5,7807fe53-ae10-49eb-bfd7-d34d48d1ca5c,Maximizer_3,A player who is flexible and will try to win using whatever strategy seems best.,0,6.75,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 46
+}
+]"
+Game-2c5e98,5,77c44e24-39e6-4c2c-aea2-c550caef24f4,Altruist_4,A player who believes that cooperation is always the best strategy for everyone.,0,6.75,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 46
+}
+]"
+Game-2c5e98,5,6c5e46d5-ec82-4332-9859-4e1868027fcc,ThoughtfulInvestor_5,A cautious but fair player who wants the group to succeed but avoids being exploited.,0,6.75,less,"API Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: ""generativelanguage.googleapis.com/generate_content_free_tier_requests""
+  quota_id: ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier""
+  quota_dimensions {
+    key: ""model""
+    value: ""gemini-1.5-flash""
+  }
+  quota_dimensions {
+    key: ""location""
+    value: ""global""
+  }
+  quota_value: 15
+}
+, links {
+  description: ""Learn more about Gemini API quotas""
+  url: ""https://ai.google.dev/gemini-api/docs/rate-limits""
+}
+, retry_delay {
+  seconds: 46
+}
+]"

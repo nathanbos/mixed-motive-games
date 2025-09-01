@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Setup - Mixed Motive Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Game Setup</h1>
+        <p>Configure the parameters and build your game roster slot by slot.</p>
+
+        <form action="{{ url_for('start_game') }}" method="post">
+            
+            <fieldset>
+                <legend>Game Parameters</legend>
+                <div class="form-grid">
+                    <div>
+                        <label for="num_rounds">Number of Rounds:</label>
+                        <input type="number" id="num_rounds" name="num_rounds" value="3" min="1" max="50" required>
+                    </div>
+                    <div>
+                        <label for="multiplier">Group Multiplier:</label>
+                        <input type="number" id="multiplier" name="multiplier" value="1.5" min="1.0" max="3.0" step="0.1" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>AI Configuration</legend>
+                <p>Choose one AI provider and model to be used for all AI players in this game.</p>
+                <div class="form-grid">
+                    <div>
+                        <label for="game_provider">AI Provider:</label>
+                        <select id="game_provider" name="game_provider">
+                            <option value="gemini">Google Gemini</option>
+                            <option value="openai">OpenAI GPT</option>
+                            <option value="anthropic">Anthropic Claude</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="game_model">AI Model:</label>
+                        <select id="game_model" name="game_model">
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Build Roster</legend>
+                <p>Add player slots and choose a type for each. You can mix and match.</p>
+                <div id="player-slots-container">
+                    <!-- Player slots will be added here by JavaScript -->
+                </div>
+                <button type="button" id="add-player-btn" class="button-secondary">Add Player Slot</button>
+            </fieldset>
+
+            <button type="submit" class="button-primary">Start Game</button>
+        </form>
+    </div>
+
+    <!-- Template for a new player slot. This is hidden and used by JavaScript. -->
+    <template id="player-slot-template">
+        <div class="player-slot">
+            <select name="player_slot" class="player-type-selector" required>
+                <option value="" disabled selected>-- Choose a player type --</option>
+                <option value="human">Generic Human Player (You)</option>
+                <optgroup label="Persistent Characters">
+                    {% for player in persistent_players %}
+                    <option value="persistent:{{ player.player_id }}">{{ player.name }} ({{ player.player_type }})</option>
+                    {% endfor %}
+                </optgroup>
+                <optgroup label="New AI from Personality">
+                    {% for p in personalities %}
+                    <option value="personality:{{ p.name }}">{{ p.name }}</option>
+                    {% endfor %}
+                </optgroup>
+            </select>
+            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">Remove</button>
+        </div>
+    </template>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addPlayerBtn = document.getElementById('add-player-btn');
+            const container = document.getElementById('player-slots-container');
+            const template = document.getElementById('player-slot-template');
+            const providerSelector = document.getElementById('game_provider');
+            const modelSelector = document.getElementById('game_model');
+
+            const modelsByProvider = {
+                gemini: [
+                    { id: 'gemini-1.5-pro-latest', name: 'Gemini 1.5 Pro' },
+                    { id: 'gemini-1.5-flash-latest', name: 'Gemini 1.5 Flash' }
+                ],
+                openai: [
+                    { id: 'gpt-4o', name: 'GPT-4o' },
+                    { id: 'gpt-4o-mini', name: 'GPT-4o mini' }
+                ],
+                anthropic: [
+                    { id: 'claude-3-opus-20240229', name: 'Claude 3 Opus' },
+                    { id: 'claude-3-5-sonnet-20240620', name: 'Claude 3.5 Sonnet' }
+                ]
+            };
+
+            function updateModelOptions() {
+                const provider = providerSelector.value;
+                const models = modelsByProvider[provider] || [];
+                modelSelector.innerHTML = models.map(m => `<option value="${m.id}">${m.name}</option>`).join('');
+            }
+
+            function addPlayerSlot() {
+                const clone = template.content.cloneNode(true);
+                container.appendChild(clone);
+            }
+
+            providerSelector.addEventListener('change', updateModelOptions);
+            addPlayerBtn.addEventListener('click', addPlayerSlot);
+
+            updateModelOptions();
+            addPlayerSlot();
+            addPlayerSlot();
+            addPlayerSlot();
+        });
+    </script>
+</body>
+</html>

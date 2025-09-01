@@ -1,0 +1,11 @@
+contribution,decision,game_id,payoff,player_id,player_name,player_type,round,statement,thinking
+more,5,Game-c98bf3,6.0,cfccb6d3-8c92-453f-bb67-9988e7e20df6,Alice,human,1,N/A,Human decision
+less,3,Game-c98bf3,8.0,303dec7d-82ec-4e2f-b1bf-3a07fb6f7a22,Carol,A cautious but fair player who wants the group to succeed but avoids being exploited.,1,N/A,INVESTMENT: 3
+more,5,Game-c98bf3,6.0,cfccb6d3-8c92-453f-bb67-9988e7e20df6,Alice,human,2,"Alice and Carol, you've played this game before! Let's all invest the maximum and make a lot of money.",Human decision
+less,3,Game-c98bf3,8.0,303dec7d-82ec-4e2f-b1bf-3a07fb6f7a22,Carol,A cautious but fair player who wants the group to succeed but avoids being exploited.,2,"I'm pleased with the round's results, and I'm looking forward to a continued collaborative and profitable approach in the next round.",INVESTMENT: 3
+more,5,Game-c98bf3,6.0,cfccb6d3-8c92-453f-bb67-9988e7e20df6,Alice,human,3,"Carol, I'd like to see you invest 5 next round!",Human decision
+less,3,Game-c98bf3,8.0,303dec7d-82ec-4e2f-b1bf-3a07fb6f7a22,Carol,A cautious but fair player who wants the group to succeed but avoids being exploited.,3,"""I'm pleased with the round's outcome and happy to see a profit for everyone.  I'll continue to invest cautiously to minimize risk for myself and the group as a whole.""",INVESTMENT: 3
+same,3,Game-c98bf3,6.5,cfccb6d3-8c92-453f-bb67-9988e7e20df6,Alice,human,4,"Carol, I'm only going to invest what you do. We'll do best if you invest 5.",Human decision
+same,3,Game-c98bf3,6.5,303dec7d-82ec-4e2f-b1bf-3a07fb6f7a22,Carol,A cautious but fair player who wants the group to succeed but avoids being exploited.,4,I'm pleased with the overall round results.  Let's continue to collaborate strategically to maximize everyone's returns.,INVESTMENT: 3
+less,0,Game-c98bf3,7.25,cfccb6d3-8c92-453f-bb67-9988e7e20df6,Alice,human,5,pass,Human decision
+more,3,Game-c98bf3,4.25,303dec7d-82ec-4e2f-b1bf-3a07fb6f7a22,Carol,A cautious but fair player who wants the group to succeed but avoids being exploited.,5,I'm pleased with the outcome of this round; a fair return for a moderate investment.  Let's continue to collaborate cautiously and strategically.,INVESTMENT: 3

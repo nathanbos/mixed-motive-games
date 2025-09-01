@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over - {{ game.game_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Game Over: {{ game.game_id }}</h1>
+        
+        <div class="context-box">
+            <h3>Final Game Earnings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Earnings This Game</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for p in game.players %}
+                    <tr>
+                        <td>{{ p.name }}</td>
+                        <td>{{ "%.2f"|format(game.game_earnings.get(p.player_id, 0)) }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- THE FIX IS ON THIS LINE: Changed 'download_results' to 'download_record' -->
+        <a href="{{ url_for('download_record', game_id=game.game_id) }}" class="button-primary" style="margin-top: 20px;">Download Game Record (CSV)</a>
+
+        <div class="history-box">
+            <h3>Full Game History (Newest First)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Round</th>
+                        <th>Player</th>
+                        <th>Statement</th>
+                        <th>Investment</th>
+                        <th>Payoff</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in game.current_game_log|reverse %}
+                    <tr>
+                        <td>{{ log.round }}</td>
+                        <td>{{ log.player_name }}</td>
+                        <td>{{ log.statement }}</td>
+                        <td>{{ log.decision }}</td>
+                        <td>{{ "%.2f"|format(log.payoff) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer-nav">
+            <a href="{{ url_for('setup_page') }}">Start a New Game</a>
+        </div>
+    </div>
+</body>
+</html>

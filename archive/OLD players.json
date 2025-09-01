@@ -1,0 +1,58 @@
+[
+  {
+    "player_id": "2a047a0c-d503-4c29-9d05-2a43d39366be",
+    "name": "Alice",
+    "player_type": "human",
+    "bank": 117.625,
+    "personality": "N/A",
+    "strategy": "N/A",
+    "history": [
+      {
+        "game_id": "InvestmentGame001",
+        "round": 1,
+        "decision": 3.0,
+        "payoff": 6.125
+      },
+      {
+        "game_id": "InvestmentGame001",
+        "round": 2,
+        "decision": 3.0,
+        "payoff": 5.75
+      },
+      {
+        "game_id": "InvestmentGame001",
+        "round": 3,
+        "decision": 3.0,
+        "payoff": 5.75
+      }
+    ]
+  },
+  {
+    "player_id": "3ebbe13f-4547-4668-ad8f-472e0d750a13",
+    "name": "Carol",
+    "player_type": "ai_llm",
+    "bank": 120.125,
+    "personality": "A cautious but fair player who wants the group to succeed but avoids being exploited.",
+    "strategy": "You are a thoughtful investor. You want to contribute to the group pot to help it grow, but you are also cautious about being exploited by players who don't invest much. Try to balance group success with your own personal gain by investing a reasonable amount, but reduce your investment if you see others are not contributing.",
+    "history": [
+      {
+        "game_id": "InvestmentGame001",
+        "round": 1,
+        "decision": 2.5,
+        "payoff": 6.625
+      },
+      {
+        "game_id": "InvestmentGame001",
+        "round": 2,
+        "decision": 2.0,
+        "payoff": 6.75
+      },
+      {
+        "game_id": "InvestmentGame001",
+        "round": 3,
+        "decision": 2.0,
+        "payoff": 6.75
+      }
+    ]
+  }
+]

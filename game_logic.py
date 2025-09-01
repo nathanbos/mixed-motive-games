@@ -1,284 +1,362 @@
-# game_logic.py
+import os
+import json
+import uuid
+import random
+import datetime # Import the datetime module
+from dotenv import load_dotenv
+import google.generativeai as genai
+import openai
+import anthropic
+import pandas as pd
 
+# --- Configuration ---
+PLAYERS_FILE = 'players.json'
+PERSONALITIES_FILE = 'personalities.json'
+GAME_LOG_FILE = 'game_log.json'
+RECORDS_DIR = 'game_records'
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Configure API keys at the module level
+GEMINI_API_KEY = os.environ.get("MY_GEMINI_API_KEY")
+OPENAI_API_KEY = os.environ.get("MY_OPENAI_API_KEY")
+ANTHROPIC_API_KEY = os.environ.get("MY_ANTHROPIC_API_KEY")
+
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+
+# --- Player and Agent Classes ---
+# ... existing Player and LLMAgent class code ...
 class Player:
-    def __init__(self, player_id, player_type="human"):
-        """
-        Initializes a Player.
-
-        Args:
-            player_id (str): A unique identifier for the player.
-            player_type (str): Type of player, e.g., "human" or "ai".
-        """
-        if not isinstance(player_id, str) or not player_id:
-            raise ValueError("player_id must be a non-empty string.")
-        if player_type not in ["human", "ai"]:
-            raise ValueError("player_type must be 'human' or 'ai'.")
-
-        self.player_id = player_id
+    def __init__(self, name, player_type="human", bank=100.0, personality="N/A", strategy="N/A", history=None, player_id=None):
+        self.player_id = player_id if player_id is not None else str(uuid.uuid4())
+        self.name = name
         self.player_type = player_type
-        self.history = [] # To store past decisions, payoffs, etc.
+        self.bank = float(bank)
+        self.personality = personality
+        self.strategy = strategy
+        self.history = history if history is not None else []
 
-    def __str__(self):
-        return f"Player(ID: {self.player_id}, Type: {self.player_type})"
-
-    def __repr__(self):
-        return f"Player('{self.player_id}', '{self.player_type}')"
-
-    def record_decision(self, round_number, decision, payoff):
-        """
-        Records the player's decision and payoff for a given round.
-
-        Args:
-            round_number (int): The round number.
-            decision (any): The decision made by the player (e.g., "cooperate", "defect").
-            payoff (float or int): The payoff received by the player for that round.
-        """
-        self.history.append({
-            "round": round_number,
-            "decision": decision,
-            "payoff": payoff
-        })
-
-# Example Usage (you can put this at the bottom of the file for testing,
-# but remove or comment it out before committing):
-if __name__ == "__main__":
-    try:
-        player1 = Player("Alice", "human")
-        player2 = Player("Bob_AI", "ai")
-        print(player1)
-        print(player2)
-        player1.record_decision(round_number=1, decision="cooperate", payoff=3)
-        player2.record_decision(round_number=1, decision="defect", payoff=5)
-        print(player1.history)
-        print(player2.history)
-
-        # Test invalid input
-        # player3 = Player("", "human") # Should raise ValueError
-        # player4 = Player("Carol", "robot") # Should raise ValueError
-
-    except ValueError as e:
-        print(f"Error: {e}")
-
-
-# game_logic.py
-
-# ... (Player class code from before should be above this) ...
-
-# game_logic.py
-
-# ... (Player class code from before should be above this) ...
-
-class Game:
-    def __init__(self, game_id, num_rounds=10):
-        """
-        Initializes a Game.
-
-        Args:
-            game_id (str): A unique identifier for the game.
-            num_rounds (int): The total number of rounds to be played in the game.
-        """
-        if not isinstance(game_id, str) or not game_id:
-            raise ValueError("game_id must be a non-empty string.")
-        if not isinstance(num_rounds, int) or num_rounds <= 0:
-            raise ValueError("num_rounds must be a positive integer.")
-
-        self.game_id = game_id
-        self.num_rounds = num_rounds
-        self.current_round = 0
-        self.players = [] # List of Player objects
-        self.game_history = [] # List to store decisions and payoffs for each round for all players
-
-    def add_player(self, player):
-        """
-        Adds a Player object to the game.
-
-        Args:
-            player (Player): An instance of the Player class.
-        """
-        if not isinstance(player, Player):
-            raise ValueError("Invalid player object provided.")
-        if player in self.players:
-            print(f"Warning: Player {player.player_id} is already in the game.")
-            return
-        self.players.append(player)
-        print(f"Player {player.player_id} added to game {self.game_id}.")
-
-    def _get_player_decisions_for_round(self):
-        """
-        Collects decisions from all players for the current round.
-        For now, we'll simulate AI decisions and prompt for human decisions.
-        This will be expanded significantly later.
-
-        Returns:
-            dict: A dictionary mapping player_id to their decision (e.g., "cooperate" or "defect").
-        """
-        decisions = {}
-        for player in self.players:
-# Inside the Game class, in the _get_player_decisions_for_round method:
-
-            if player.player_type == "human": # <-- Add quotes around "human"
-                # In a real web app, this input would come from the UI.
-                # For now, we'll use input() or a placeholder.
-                while True:
-                    decision = input(f"Player {player.player_id} (human), enter your decision (cooperate/defect): ").lower() # Corrected this line too
-                    if decision in ["cooperate", "defect"]:
-                        decisions[player.player_id] = decision
-                        break
-                    else:
-                        print("Invalid decision. Please enter 'cooperate' or 'defect'.")
-            elif player.player_type == "ai": # <-- Add quotes around "ai" just in case, though your error was with "human"
-                # Basic AI: For now, let's make AI always cooperate as a placeholder.
-                # We'll define specific AI strategies later.
-                decisions[player.player_id] = "cooperate" # Placeholder AI decision
-                print(f"Player {player.player_id} (AI) chose to cooperate.")
-        return decisions
-
-    def _calculate_payoffs_for_round(self, decisions):
-        """
-        Calculates payoffs for each player based on the decisions made in a round.
-        This is the core logic for a specific social dilemma.
-
-        Args:
-            decisions (dict): A dictionary mapping player_id to their decision.
-
-        Returns:
-            dict: A dictionary mapping player_id to their calculated payoff for the round.
-        """
-        payoffs = {}
-        num_cooperators = sum(1 for decision in decisions.values() if decision == "cooperate")
-        num_defectors = len(self.players) - num_cooperators
-
-        # --- Example Payoff Logic (N-Player Public Goods Game variant) ---
-        # Each cooperator contributes 1 unit to a common pot.
-        # The pot is multiplied by a factor (e.g., 1.6).
-        # The total pot is then divided equally among all players.
-        # Defectors contribute nothing but still get a share of the pot.
-        # Cooperators also pay their contribution cost.
-
-        contribution_cost = 1.0  # Cost for a cooperator to contribute
-        multiplication_factor = 1.6 # Factor by which the common pot is multiplied
-
-        if not self.players:
-            return {}
-
-        total_contributions = num_cooperators * contribution_cost
-        total_pot = total_contributions * multiplication_factor
-        share_per_player = total_pot / len(self.players) if self.players else 0
-
-        for player_id, decision in decisions.items():
-            if decision == "cooperate":
-                payoffs[player_id] = share_per_player - contribution_cost
-            else: # Defect
-                payoffs[player_id] = share_per_player
-        # --- End Example Payoff Logic ---
-
-        return payoffs
-
-    def play_round(self):
-        """
-        Plays a single round of the game:
-        1. Increments round number.
-        2. Gets decisions from players.
-        3. Calculates payoffs.
-        4. Records decisions and payoffs.
-        5. Prints round summary.
-        """
-        if self.current_round >= self.num_rounds:
-            print("Game has already ended.")
-            return False
-        if not self.players or len(self.players) < 2 : # Typically, dilemmas need at least 2 players
-            print("Not enough players to start a round. Please add at least 2 players.")
-            return False
-
-        self.current_round += 1
-        print(f"\n--- Round {self.current_round} of {self.num_rounds} ---")
-
-        decisions = self._get_player_decisions_for_round()
-        payoffs = self._calculate_payoffs_for_round(decisions)
-
-        round_summary = {
-            "round": self.current_round,
-            "decisions": decisions,
-            "payoffs": payoffs
+    def to_dict(self):
+        return {
+            'player_id': self.player_id, 'name': self.name, 'player_type': self.player_type,
+            'bank': self.bank, 'personality': self.personality, 'strategy': self.strategy,
         }
-        self.game_history.append(round_summary)
 
-        # Record decision in each player's history
-        for player in self.players:
-            player_id = player.player_id
-            player.record_decision(
-                round_number=self.current_round,
-                decision=decisions.get(player_id),
-                payoff=payoffs.get(player_id)
-            )
-
-        print("Decisions:", decisions)
-        print("Payoffs:", payoffs)
-        
-        # Print player total scores so far
-        print("--- Total Scores After Round", self.current_round, "---")
-        for player in self.players:
-            total_score = sum(item['payoff'] for item in player.history if item['payoff'] is not None)
-            print(f"Player {player.player_id}: {total_score:.2f}")
-
-        return True
-
-    def play_game(self):
-        """
-        Plays the game for the total number of rounds.
-        """
-        print(f"Starting Game: {self.game_id} with {len(self.players)} players for {self.num_rounds} rounds.")
-        while self.current_round < self.num_rounds:
-            if not self.play_round():
-                print("Game ended prematurely.")
-                break
-        print(f"\n--- Game {self.game_id} Over ---")
-        print("Final Scores:")
-        for player in self.players:
-            total_score = sum(item['payoff'] for item in player.history if item['payoff'] is not None)
-            print(f"Player {player.player_id}: {total_score:.2f}")
-        print("Game History:", self.game_history)
+    @classmethod
+    def from_dict(cls, data):
+        data_copy = data.copy()
+        if 'player_type' not in data_copy: data_copy['player_type'] = 'human'
+        if data_copy.get('player_type') == 'ai_llm':
+            return LLMAgent.from_dict(data_copy)
+        return cls(**data_copy)
 
     def __str__(self):
-        return f"Game(ID: {self.game_id}, Rounds: {self.current_round}/{self.num_rounds}, Players: {len(self.players)})"
+        return f"Player(Name: {self.name}, Type: {self.player_type}, Bank: {self.bank:.2f})"
 
-# Update the example usage:
-if __name__ == "__main__":
-    try:
-        # Test Player Class
-        player1 = Player("Alice", "human")
-        player2 = Player("Bob_AI", "ai")
-        player3 = Player("Charlie", "human")
-        print(player1)
-        print(player2)
-        print(player3)
-        player1.record_decision(round_number=0, decision="initial_cooperate", payoff=0) # Example pre-game history
-        print(player1.history)
-        print("-" * 20)
+class LLMAgent(Player):
+    def __init__(self, name, player_type, bank, personality, strategy, history=None, player_id=None, provider='gemini', model=None):
+        super().__init__(name, player_type, bank, personality, strategy, history, player_id)
+        self.provider = provider.lower()
+        self.model_name = model
+        self.client = None
+        self._initialize_client()
 
-        # Test Game Class
-        my_game = Game("TestGame001", num_rounds=3)
-        print(my_game)
+    def _initialize_client(self):
+        if self.provider == 'gemini':
+            if not GEMINI_API_KEY: raise ValueError("Gemini API key is not configured.")
+            self.model_name = self.model_name or 'gemini-2.5-pro-latest'
+            self.client = genai.GenerativeModel(self.model_name)
+        elif self.provider == 'openai':
+            if not OPENAI_API_KEY: raise ValueError("OpenAI API key is not configured.")
+            self.model_name = self.model_name or 'gpt-4o'
+            self.client = openai.OpenAI(api_key=OPENAI_API_KEY)
+        elif self.provider == 'anthropic':
+            if not ANTHROPIC_API_KEY: raise ValueError("Anthropic API key is not configured.")
+            self.model_name = self.model_name or 'claude-3-opus-20240229'
+            self.client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        else:
+            raise ValueError(f"Unsupported provider: {self.provider}.")
+        print(f"LLMAgent {self.name} initialized with provider: {self.provider.upper()} using model: {self.model_name}")
+    
+    def to_dict(self):
+        data = super().to_dict()
+        data['provider'] = self.provider
+        data['model'] = self.model_name
+        return data
 
-        my_game.add_player(player1)
-        my_game.add_player(player2)
-        my_game.add_player(player3)
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            name=data['name'], player_type=data['player_type'], bank=data['bank'],
+            personality=data['personality'], strategy=data['strategy'], history=data.get('history', []),
+            player_id=data.get('player_id'), provider=data.get('provider', 'gemini'), model=data.get('model')
+        )
+
+    def _call_llm_api(self, prompt):
+        """Internal method to call the appropriate LLM API."""
+        if self.provider == 'gemini':
+            return self.client.generate_content(prompt).text
+        elif self.provider == 'openai':
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            return response.choices[0].message.content
+        elif self.provider == 'anthropic':
+            response = self.client.messages.create(
+                model=self.model_name,
+                max_tokens=200,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            return response.content[0].text
+        return ""
+
+    def make_decision(self, game_state_summary):
+        full_prompt = (
+            f"You are an AI player named {self.name}.\nYour strategy is: '{self.strategy}'\n\n"
+            f"Here is the game history so far:\n{game_state_summary}\n\n"
+            f"Task: Based on the history and your strategy, decide how much to invest this round. Choose an INTEGER between 0 and 5.\n"
+            f"Respond ONLY with your decision in the format 'INVESTMENT: <amount>'."
+        )
+        print(f"\n--- LLMAgent {self.name} ({self.provider.upper()}/{self.model_name}) Deciding Investment ---")
+        try:
+            response_text = self._call_llm_api(full_prompt).strip()
+            print(f"LLM Response for {self.name}: {response_text}")
+            decision = 0
+            if response_text.upper().startswith("INVESTMENT:"):
+                choice_str = response_text.upper().replace("INVESTMENT:", "").strip()
+                decision = max(0, min(5, int(float(choice_str))))
+            return decision, response_text
+        except Exception as e:
+            print(f"Error calling {self.provider.upper()} API for player {self.name}: {e}")
+            return 0, f"API Error: {e}"
+
+    def make_statement(self, discussion_context):
+        full_prompt = (
+            f"You are an AI player named {self.name}.\nYour strategy is: '{self.strategy}'\n\n"
+            f"Here is the full context of the game so far:\n{discussion_context}\n\n"
+            f"Task: Make one statement to the group. Consider the entire game history, previous discussions, and the most recent investment results. Do not repeat things you have said before. Make your statement relevant to the current situation."
+        )
+        print(f"\n--- LLMAgent {self.name} ({self.provider.upper()}/{self.model_name}) Making Statement ---")
+        try:
+            return self._call_llm_api(full_prompt).strip()
+        except Exception as e:
+            print(f"Error calling {self.provider.upper()} API for statement from {self.name}: {e}")
+            return "..."
+
+# --- Data Management Functions ---
+def load_json_data(filename):
+    if not os.path.exists(filename): return []
+    with open(filename, 'r') as f:
+        try: return json.load(f)
+        except json.JSONDecodeError: return []
+def save_json_data(data, filename):
+    with open(filename, 'w') as f: json.dump(data, f, indent=2)
+def save_players(players_list):
+    save_json_data([p.to_dict() for p in players_list], PLAYERS_FILE)
+def load_players():
+    return [Player.from_dict(p_data) for p_data in load_json_data(PLAYERS_FILE)]
+def append_to_game_log(new_entries):
+    log_data = load_json_data(GAME_LOG_FILE)
+    log_data.extend(new_entries)
+    save_json_data(log_data, GAME_LOG_FILE)
+def save_game_to_csv(game_log, game_id, timestamp):
+    if not game_log: return
+    if not os.path.exists(RECORDS_DIR): os.makedirs(RECORDS_DIR)
+    df = pd.DataFrame(game_log)
+    # --- CHANGE: Use timestamp in the filename ---
+    filepath = os.path.join(RECORDS_DIR, f"game-record_{timestamp}_{game_id}.csv")
+    df.to_csv(filepath, index=False)
+    print(f"Game record saved to {filepath}")
+
+# --- Game Class ---
+class Game:
+    def __init__(self, game_id, participating_players, num_rounds=10, multiplier=1.5, timestamp=None):
+        self.game_id = game_id
+        # --- CHANGE: Store a timestamp for the game ---
+        self.timestamp = timestamp or datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        self.num_rounds = num_rounds
+        self.multiplier = multiplier
+        self.current_round = 0
+        self.investment_limit = 5
+        self.players = participating_players
+        self.current_game_log = []
+        self.game_earnings = {p.player_id: 0.0 for p in self.players}
+        self.last_discussion = {}
+        self.last_investment_results = {}
+        self.phase = "INVESTMENT"
+
+    def to_dict(self):
+        return {
+            "game_id": self.game_id, "timestamp": self.timestamp, "num_rounds": self.num_rounds,
+            "multiplier": self.multiplier, "current_round": self.current_round,
+            "investment_limit": self.investment_limit, "players": [p.to_dict() for p in self.players],
+            "current_game_log": self.current_game_log, "game_earnings": self.game_earnings,
+            "last_discussion": self.last_discussion, "last_investment_results": self.last_investment_results,
+            "phase": self.phase
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        players = [Player.from_dict(p_data) for p_data in data['players']]
+        game = cls(
+            data['game_id'], players, data['num_rounds'],
+            data['multiplier'], timestamp=data.get('timestamp')
+        )
+        game.current_round = data['current_round']
+        game.current_game_log = data['current_game_log']
+        game.game_earnings = data['game_earnings']
+        game.last_discussion = data.get('last_discussion', {})
+        game.last_investment_results = data.get('last_investment_results', {})
+        game.phase = data.get('phase', 'INVESTMENT')
+        return game
+# ... existing get_human_player, process_investment_round, process_discussion_round methods ...
+    def get_human_player(self):
+        return next((p for p in self.players if p.name.startswith('Human_')), None)
+
+    def process_investment_round(self, human_decision=None):
+        self.current_round += 1
+        decisions = {}
+        explanations = {}
+        human_player = self.get_human_player()
+
+        for player in self.players:
+            if human_player and player.player_id == human_player.player_id: continue
+            if isinstance(player, LLMAgent):
+                summary = self._create_game_state_summary(player)
+                decision, explanation = player.make_decision(summary)
+                decisions[player.player_id], explanations[player.player_id] = decision, explanation
+            else:
+                decisions[player.player_id], explanations[player.player_id] = 0, "Default NPC behavior"
+
+        if human_player and human_decision is not None:
+            decisions[human_player.player_id], explanations[human_player.player_id] = human_decision, "Human decision"
         
-        # Try adding the same player again
-        my_game.add_player(player1)
-
-
-        print(f"\nStarting game with players: {[p.player_id for p in my_game.players]}")
-
-        # Play the game (this will prompt for human input)
-        my_game.play_game()
-
-        # Test invalid inputs for Game class (optional, can be commented out)
-        # game_invalid_id = Game("", num_rounds=5)
-        # game_invalid_rounds = Game("Game002", num_rounds=0)
-
-    except ValueError as e:
-        print(f"Error: {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        payoffs = self._calculate_payoffs(decisions)
+        self.last_investment_results = {"decisions": decisions, "payoffs": payoffs, "explanations": explanations}
         
+        self.phase = "DISCUSSION"
+
+    def process_discussion_round(self, human_statement=None):
+        statements = {}
+        human_player = self.get_human_player()
+        if human_player and human_statement is not None:
+            statements[human_player.player_id] = human_statement
+
+        for player in self.players:
+            if isinstance(player, LLMAgent):
+                discussion_context = self._create_context_for_statement(player)
+                statements[player.player_id] = player.make_statement(discussion_context)
+            elif player.player_type == 'human' and player.player_id != (human_player and human_player.player_id):
+                 statements[player.player_id] = "..."
+        
+        self.last_discussion = statements
+        # --- CHANGE: Associate discussion with the round that just happened ---
+        self._log_completed_round(statements)
+
+        if self.current_round >= self.num_rounds:
+            self.phase = "GAMEOVER"
+            # --- CHANGE: Pass timestamp to the save function ---
+            save_game_to_csv(self.current_game_log, self.game_id, self.timestamp)
+        else:
+            self.phase = "INVESTMENT"
+
+    def _log_completed_round(self, statements):
+        """Creates and saves the log entry for the round that just finished."""
+        decisions = self.last_investment_results.get('decisions', {})
+        payoffs = self.last_investment_results.get('payoffs', {})
+        explanations = self.last_investment_results.get('explanations', {})
+        avg_inv = sum(decisions.values()) / len(decisions) if decisions else 0
+
+        round_log_entries = []
+        for player in self.players:
+            payoff = payoffs.get(player.player_id, 0)
+            decision = decisions.get(player.player_id, 0)
+            player.bank += payoff
+            self.game_earnings[player.player_id] += payoff
+            
+            log_entry = {
+                'game_id': self.game_id, 'round': self.current_round, 'player_id': player.player_id,
+                'player_name': player.name, 'player_type': player.personality if isinstance(player, LLMAgent) else player.player_type,
+                'decision': decision, 'payoff': round(payoff, 2),
+                'contribution': 'more' if decision > avg_inv else ('less' if decision < avg_inv else 'same'),
+                'statement': statements.get(player.player_id, "N/A"),
+                'thinking': explanations.get(player.player_id, "N/A")
+            }
+            round_log_entries.append(log_entry)
+        
+        self.current_game_log.extend(round_log_entries)
+        append_to_game_log(round_log_entries)
+
+    def _create_context_for_statement(self, current_player):
+        history_summary = self._create_game_state_summary(current_player, for_statement=True)
+        
+        if not self.last_investment_results:
+            results_summary = "This is the first round, so there are no investment results to discuss yet."
+        else:
+            results_summary = f"--- Results of Investment Round {self.current_round} ---\n"
+            decisions = self.last_investment_results.get('decisions', {})
+            payoffs = self.last_investment_results.get('payoffs', {})
+            for p in self.players:
+                p_name = f"You ({p.name})" if p.player_id == current_player.player_id else p.name
+                results_summary += f"- {p_name} invested {decisions.get(p.player_id, 0)}, earning a payoff of {payoffs.get(p.player_id, 0):.2f}.\n"
+        return f"{history_summary}\n{results_summary}"
+
+    def _create_game_state_summary(self, current_player, for_statement=False):
+        summary = f"--- Full Game History (Newest to Oldest) ---\n\n"
+        rounds_data = {}
+        for log_entry in self.current_game_log:
+            round_num = log_entry['round']
+            if round_num not in rounds_data:
+                rounds_data[round_num] = []
+            rounds_data[round_num].append(log_entry)
+
+        # --- CHANGE: Display rounds in descending order ---
+        for round_num in sorted(rounds_data.keys(), reverse=True):
+            summary += f"**Round {round_num} Summary:**\n"
+            round_actions = rounds_data[round_num]
+            invest_summary = []
+            for action in round_actions:
+                player_name = action['player_name']
+                if action['player_id'] == current_player.player_id:
+                    player_name = f"You ({action['player_name']})"
+                invest_summary.append(
+                    f"{player_name} invested {action['decision']} "
+                    f"({action['contribution']} than avg), payoff was {action['payoff']:.2f}."
+                )
+            summary += "- " + "\n- ".join(invest_summary) + "\n"
+
+            discussion_summary = []
+            summary += f"[Discussion after Round {round_num}]\n"
+            for action in round_actions:
+                player_name = action['player_name']
+                if action['player_id'] == current_player.player_id:
+                    player_name = "You"
+                if action['statement'] and action['statement'] != "N/A":
+                    discussion_summary.append(f"- {player_name} said: {action['statement']}")
+            if discussion_summary:
+                summary += "\n".join(discussion_summary) + "\n"
+            else:
+                summary += "- No discussion took place.\n"
+            summary += "\n"
+
+        if not for_statement:
+            # --- CHANGE: Increment round number correctly for the prompt ---
+            summary += f"--- Your Turn (Round {self.current_round + 1}) ---\n"
+            summary += f"Your Total Bank: {current_player.bank:.2f}\n"
+            summary += (
+                f"Payoff Rules: Invest an integer from 0 to {self.investment_limit}. You keep what you don't invest. "
+                f"The common pot is multiplied by {self.multiplier} and shared equally."
+            )
+        return summary
+    
+    def _calculate_payoffs(self, decisions):
+        payoffs = {}
+        total_investment = sum(decisions.values())
+        total_pot = total_investment * self.multiplier
+        share = total_pot / len(self.players) if self.players else 0
+        for pid, investment in decisions.items():
+            payoffs[pid] = (self.investment_limit - investment) + share
+        return payoffs

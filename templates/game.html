@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixed Motive Game - {{ game.game_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Game: {{ game.game_id }}</h1>
+            <div class="game-status">
+                <span><strong>Round:</strong> {{ game.current_round + 1 if game.phase == 'INVESTMENT' else game.current_round }} / {{ game.num_rounds }}</span>
+                <span><strong>Phase:</strong> {{ game.phase }}</span>
+            </div>
+        </div>
+
+        <!-- CONTEXT DISPLAY: Shows different info based on the game phase -->
+        <div class="context-box">
+            {% if game.phase == 'INVESTMENT' %}
+                <h3>Last Round's Discussion (Round {{ game.current_round }})</h3>
+                {% if game.last_discussion %}
+                    <ul>
+                    {% for pid, statement in game.last_discussion.items() %}
+                        {% set player = game.players|selectattr('player_id', 'equalto', pid)|first %}
+                        <li><strong>{{ player.name }}:</strong> {{ statement }}</li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>This is the first round. Good luck!</p>
+                {% endif %}
+            {% elif game.phase == 'DISCUSSION' %}
+                <h3>Last Round's Investments (Round {{ game.current_round }})</h3>
+                <table>
+                    <thead><tr><th>Player</th><th>Investment</th><th>Payoff</th></tr></thead>
+                    <tbody>
+                    {% for pid, decision in game.last_investment_results.decisions.items() %}
+                        {% set player = game.players|selectattr('player_id', 'equalto', pid)|first %}
+                        <tr>
+                            <td>{{ player.name }}</td>
+                            <td>{{ decision }}</td>
+                            <td>{{ "%.2f"|format(game.last_investment_results.payoffs[pid]) }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+
+        <!-- ACTION FORM: Shows the correct input for the current phase -->
+        <div class="action-box">
+            <form action="{{ url_for('submit_action') }}" method="post">
+                {% if game.get_human_player() %}
+                    {% if game.phase == 'INVESTMENT' %}
+                        <h3>Your Investment</h3>
+                        <p>You have {{ game.investment_limit }} to invest. You keep what you don't invest.</p>
+                        <input type="number" name="investment" min="0" max="{{ game.investment_limit }}" step="1" required>
+                        <button type="submit" class="button-primary">Submit Investment</button>
+                    {% elif game.phase == 'DISCUSSION' %}
+                        <h3>Your Statement</h3>
+                        <p>Make a statement to the group. Type 'pass' to say nothing.</p>
+                        <input type="text" name="statement" required>
+                        <button type="submit" class="button-primary">Submit Statement</button>
+                    {% endif %}
+                {% else %}
+                    <!-- Observer Mode -->
+                    <h3>Observer Mode</h3>
+                    <p>This is an all-AI game. The simulation has already completed.</p>
+                    <a href="{{ url_for('results_page') }}" class="button-primary">View Final Results</a>
+                {% endif %}
+            </form>
+        </div>
+        
+        <!-- FULL HISTORY TABLE -->
+        <div class="history-box">
+            <h3>Full Game History (Chronological)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Round</th>
+                        <th>Player</th>
+                        <th>Investment</th>
+                        <th>Payoff</th>
+                        <th>Statement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- CHANGE: Removed |reverse filter and reordered columns -->
+                    {% for log in game.current_game_log %}
+                    <tr>
+                        <td>{{ log.round }}</td>
+                        <td>{{ log.player_name }}</td>
+                        <td>{{ log.decision }}</td>
+                        <td>{{ "%.2f"|format(log.payoff) }}</td>
+                        <td>{{ log.statement }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

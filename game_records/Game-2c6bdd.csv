@@ -1,0 +1,16 @@
+contribution,decision,game_id,payoff,player_id,player_name,player_type,round,statement,thinking
+less,0,Game-2c6bdd,7.5,1e330816-2579-4c3b-8d80-2c04c9d3a8af,Human_1,human,1,N/A,Human decision
+more,5,Game-2c6bdd,2.5,4248eb19-8ff6-43af-8c88-c9276d9928b1,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,1,N/A,INVESTMENT: 5
+less,0,Game-2c6bdd,7.5,d1f52142-8486-4895-9d2d-88bf412ec853,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,1,N/A,INVESTMENT: 0
+less,2,Game-2c6bdd,6.5,1e330816-2579-4c3b-8d80-2c04c9d3a8af,Human_1,human,2,I meant to invest 5 that round.,Human decision
+more,5,Game-2c6bdd,3.5,4248eb19-8ff6-43af-8c88-c9276d9928b1,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,2,I'm interested in exploring strategies that lead to higher collective payoffs in future rounds.,INVESTMENT: 5
+less,0,Game-2c6bdd,8.5,d1f52142-8486-4895-9d2d-88bf412ec853,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,2,Pass.,INVESTMENT: 0
+more,4,Game-2c6bdd,5.5,1e330816-2579-4c3b-8d80-2c04c9d3a8af,Human_1,human,3,Free Rider we need a little more,Human decision
+more,5,Game-2c6bdd,4.5,4248eb19-8ff6-43af-8c88-c9276d9928b1,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,3,Interesting round.  I'll be adjusting my strategy accordingly.,INVESTMENT: 5
+less,0,Game-2c6bdd,9.5,d1f52142-8486-4895-9d2d-88bf412ec853,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,3,Pass.,INVESTMENT: 0
+less,1,Game-2c6bdd,7.0,1e330816-2579-4c3b-8d80-2c04c9d3a8af,Human_1,human,4,Maximizer you're the salt of the Earth man,Human decision
+more,5,Game-2c6bdd,3.0,4248eb19-8ff6-43af-8c88-c9276d9928b1,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,4,Interesting round.  Let's see how things shake out.,INVESTMENT: 5
+less,0,Game-2c6bdd,8.0,d1f52142-8486-4895-9d2d-88bf412ec853,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,4,Pass.,INVESTMENT: 0
+less,0,Game-2c6bdd,7.5,1e330816-2579-4c3b-8d80-2c04c9d3a8af,Human_1,human,5,pass,Human decision
+more,5,Game-2c6bdd,2.5,4248eb19-8ff6-43af-8c88-c9276d9928b1,Maximizer_1,A player who is flexible and will try to win using whatever strategy seems best.,5,Interesting round.  I'll be adjusting my strategy accordingly.,INVESTMENT: 5
+less,0,Game-2c6bdd,7.5,d1f52142-8486-4895-9d2d-88bf412ec853,Free-Rider_2,A selfish player who aims to maximize their own score by letting others do the work.,5,Pass.,INVESTMENT: 0
