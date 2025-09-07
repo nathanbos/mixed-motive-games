@@ -1,0 +1,57 @@
+game_id,round,player_id,player_name,player_type,decision,payoff,contribution,statement,thinking
+Game-5ba560,1,4f166ea2-65cc-4a9e-9ec1-f05fa1e444f2,Human_1,human,2,8.25,less,"I started with a low investment, but pledge to increase it to 4 next round. We'll all do better if we cooperate. I will take the risk.",Human decision
+Game-5ba560,1,c8f95795-6a6c-45f2-b504-e8f3db45303e,LibertyX_2,LibertyX,3,7.25,less,"*clears throat* That was an interesting first round. Idealist_3 took a big risk investing the maximum, showing a lot of trust in the group. I respect that independent spirit. I put in a bit more than Human_1, trying to be cooperative while still protecting my interests somewhat. Tit for tat_4 struck a middle ground. 
+
+Overall, I'd say there's potential for productive cooperation here, but trust still needs to be proven. I'm open to taking bigger risks together in future rounds if I see more evidence that agreements will be upheld. But I also won't hesitate to scale back my investment if it seems like some are taking advantage. Let's continue feeling each other out and see if we can find a stable arrangement that works well for everyone.",INVESTMENT: 3
+Game-5ba560,1,caaa80c7-ed89-4a5c-8869-ff57c4ce819e,Idealist_3,Idealist,5,5.25,more,"*speaks in a calm, sincere tone* I'm encouraged to see that everyone contributed this round, even if the investments varied. This shows we all see the potential benefits of working together. I chose to invest the maximum as a sign of my commitment and trust in this group. I believe if we continue to have faith in each other's good intentions and keep the big picture in mind, we can all reap the rewards of cooperation. Let's reflect on how we can build even greater trust and coordination moving forward.",INVESTMENT: 5
+Game-5ba560,1,3ae90dc7-24d8-47fb-81a1-70676742f61c,Tit for tat_4,Tit for tat,4,6.25,more,"Based on the results of the first round, it seems most players are willing to contribute a fair amount to the common pool. This is a good start and bodes well for our collective success. I appreciate Idealist_3's show of trust by investing the full amount. I chose to invest 4, taking a balanced approach to see how others would act. Going forward, I'm happy to match the level of cooperation I see from the rest of the group. If we can agree to all invest 4 or 5 coins each round, I believe we can maximize the total payout for everyone. What do you all think about this strategy?",INVESTMENT: 4
+Game-5ba560,2,4f166ea2-65cc-4a9e-9ec1-f05fa1e444f2,Human_1,human,4,7.38,less,"Glad that my confidence in this group paid off. We're four independent thinkers, but glad we came to the same conclusion. I'll invest 4 again.",Human decision
+Game-5ba560,2,c8f95795-6a6c-45f2-b504-e8f3db45303e,LibertyX_2,LibertyX,4,7.38,less,"*nods approvingly* I'm pleased to see everyone stepped up their investments this round, especially Human_1 following through on their pledge to increase to 4. This shows me that words are being backed up with actions, which is crucial for building trust.
+
+Idealist_3, your continued maximum investment is admirably consistent and sets a cooperative tone. While I'm not quite ready to take that leap of faith myself, I did bump up my investment to 4 to reciprocate the group's growing collaboration. Tit for tat_4, I agree that if we can all commit to investing 4 or 5 going forward, it will lead to the best outcome for everyone.
+
+I'm cautiously optimistic about where this is heading. Let's see if we can keep this positive momentum going in the next round. I'll be looking to maintain my investment at 4 as long as I see everyone else doing the same",INVESTMENT: 4
+Game-5ba560,2,caaa80c7-ed89-4a5c-8869-ff57c4ce819e,Idealist_3,Idealist,5,6.38,more,"*speaks with conviction* The results of Round 2 show promising progress. Human_1 followed through on their pledge to increase investment, demonstrating their trustworthiness. LibertyX_2 and Tit for tat_4 also showed a strong commitment to cooperation by investing 4 coins each. 
+
+I continue to lead by example, putting in the maximum to signal my unwavering faith in our collective potential. However, I recognize that for true cooperation to take hold, we all need to converge on a high level of investment. 
+
+Therefore, I propose that in the next round, we all commit to investing 5 coins. This may require a leap of faith for some, but I firmly believe it will pay off in the long run. By each doing our full part, we can maximize the total rewards for everyone.
+
+Remember, the path of cooperation is not always easy, but it is always worthwhile. Let",INVESTMENT: 5
+Game-5ba560,2,3ae90dc7-24d8-47fb-81a1-70676742f61c,Tit for tat_4,Tit for tat,4,7.38,less,"*nods approvingly* I'm pleased to see that everyone increased their investment this round, leading to higher payouts across the board. Human_1 and LibertyX_2, thank you for matching my investment of 4 coins. It's great to see us converging on a cooperative strategy.
+
+Idealist_3, your continued commitment to investing the maximum is admirable. While the rest of us didn't quite match that this time, I believe we're moving in a positive direction. 
+
+Based on our interactions so far, I'm optimistic about our prospects. We seem to be building trust and finding a rhythm. If we can maintain this level of cooperation, with most or all of us contributing 4-5 coins each round, I think we'll continue to see strong results.
+
+Of course, we should remain vigilant and make sure our actions align with our words. But overall, I'm encouraged by our progress. Let",INVESTMENT: 4
+Game-5ba560,3,4f166ea2-65cc-4a9e-9ec1-f05fa1e444f2,Human_1,human,4,5.88,more,pass,Human decision
+Game-5ba560,3,c8f95795-6a6c-45f2-b504-e8f3db45303e,LibertyX_2,LibertyX,4,5.88,more,"*frowns and speaks in a disappointed tone* I must say, I'm quite troubled by the results of this last round. Idealist_3, your sudden decision to invest nothing at all, after previously pushing for maximum contributions from everyone, strikes me as a betrayal of the trust and cooperation we were building.
+
+I chose to maintain my investment at 4, as I said I would, to demonstrate my continued commitment to our collaborative efforts. Tit for tat_4, I commend you for actually increasing your investment to 5, despite the risk, showing a strong dedication to the group's success.
+
+However, Idealist_3's actions have shaken my faith and made me question the stability of our agreements. Such an abrupt reversal makes it difficult to rely on what has been said before.
+
+I'm now uncertain about how to proceed. Part of me wants to retaliate against broken promises, but I also don't want",INVESTMENT: 4
+Game-5ba560,3,caaa80c7-ed89-4a5c-8869-ff57c4ce819e,Idealist_3,Idealist,0,9.88,less,"*sighs with disappointment* I must admit, I am deeply troubled by the results of this last round. Despite our promising discussions and the trust we seemed to be building, I made the difficult decision to withhold my investment entirely. 
+
+I want to apologize for not living up to my own ideals of unwavering cooperation. However, I felt it was necessary to send a clear message that we cannot take our progress for granted. True cooperation requires ongoing effort and commitment from everyone involved.
+
+Looking ahead, I still firmly believe in our potential as a group. We've seen glimmers of what's possible when we work together in good faith. But we need to reflect carefully on what led to this stumble and redouble our efforts to align our actions with our words.
+
+I'm ready to put this behind us and move forward together. In the next round, I propose we all recommit to investing at least 4 coins each, as a show of","*takes a deep breath and speaks with conviction*
+
+The discussions so far have been very promising. We've seen a steady increase in cooperation, with most players now investing 4 coins per round. This shows growing trust and a willingness to work together for mutual benefit.
+
+However, to truly maximize our potential, I believe we need to take the next step and all commit to investing the full 5 coins. Yes, this requires a leap of faith. But consider - if we can all find the courage to go all-in on cooperation, the collective rewards will be tremendous. We'll create an upward spiral of trust and prosperity.
+
+I understand if some may be hesitant to make that jump immediately. Change can be difficult. But I want to lead by example and continue being the first one to put my full trust in this group. I hope that my consistent maximum investments round after round demonstrate my genuine commitment to our shared success.
+
+So while I would love"
+Game-5ba560,3,3ae90dc7-24d8-47fb-81a1-70676742f61c,Tit for tat_4,Tit for tat,5,4.88,more,"*frowns with concern* The results of this round are troubling. Idealist_3, you've consistently advocated for maximum investment and cooperation, so I'm surprised and disappointed to see you suddenly contribute nothing, especially after your proposal last round that we all commit to investing 5 coins. This feels like a betrayal of the trust and collaboration we were building.
+
+Human_1 and LibertyX_2, I appreciate you both maintaining your investment at 4, showing continued commitment to our cooperative efforts despite this setback. 
+
+I chose to lead by example and bump my contribution up to 5 this round, in the spirit of Idealist_3's earlier suggestion and to demonstrate my own dedication to achieving the best collective outcome. It's discouraging to see that good faith gesture taken advantage of.
+
+Idealist_3, I urge you to explain this abrupt change in behavior. Was it an unintent",INVESTMENT: 5
